@@ -1,4 +1,3 @@
-
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -6,6 +5,7 @@ function random(min, max) {
 function checkAnswer(event) {
     if (event.target.innerHTML == a) {
         a = random(1, 3)
+        console.log(a)
         if (l < 6) {
             q++
             l = Math.floor(Math.log2(q))
@@ -20,22 +20,10 @@ function checkAnswer(event) {
 }
 
 function generate() {
-    if (l === 2) {
-        s = v[a][random(0, 1)];
-    } else {
-        s = v[a][random(2, 3)];
-    }
+    s = v[a][random(0, 1+2*(l!=2))];
     for (let i = l; i > 2; i--) {
         m = parseInt(s[s.length - 1])
-        if (m === 0) {
-            rnd = random(0, 2)
-        } else {
-            if (i === 3) {
-                rnd = random(0, 1)
-            } else {
-                rnd = random(2, 3)
-            }
-        }
+        rnd = random(0, (1+2*(i!=3))*(m!=0)+2*(m===0))
         p = v[m][rnd]
         if (s[s.length - 2] === '-') {
             if (v[m][rnd][1] === '-') {
