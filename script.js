@@ -39,7 +39,7 @@ function generate() {
 
 let equation = document.querySelector('.equation')
 const buttons = document.querySelectorAll('.button')
-const timer = document.querySelector('hr')
+const timer = document.querySelector('.hr')
 for (let i = 0; i < 3; i++) {
     buttons[i].addEventListener('click', checkAnswer)
 }
