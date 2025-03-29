@@ -28,7 +28,7 @@ body {
    /*box-shadow: red 0 0 1px;*/
 }
 
-hr {
+.hr {
     width: 100%;
     background-color: black;
     height: 4px;
