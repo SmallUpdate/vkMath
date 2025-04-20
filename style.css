@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Rounds;
+    src: url(RoundsBlack.ttf);
+}
+
 html {
     background-color: white;
     user-select: none;
@@ -8,22 +13,39 @@ html {
 }
 
 body {
-    font-size: 16px;
-    margin: 16px;
-    font-family: monospace, 'Ubuntu Mono';
+    margin: 0;
+    font-size: 32px;
+    font-family: Rounds;
     height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.score, .stage {
+    text-align: center;
+    padding: 12px 0;
+    width: 100%;
+    background-color: black;
+    color: white
+}
+
+.main {
+    box-sizing: border-box;
+    padding: 16px;
     width: 100%;
     max-width: 480px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 30px; /* (64-4)/2 */
+    gap: 28px; /* (64-4)/2 */
 }
 
 .equation {
     color: black;
-    font-size: 4em;
+    font-size: 2em;
     line-height: 100%;
    /*box-shadow: red 0 0 1px;*/
 }
@@ -31,12 +53,9 @@ body {
 .hr {
     width: 100%;
     background-color: black;
-    height: 4px;
-    transition: transform 3s linear;
-}
-
-.timer {
-    transform: scaleX(0);
+    height: 8px;
+    border-radius: 4px;
+    transition: all 3s linear;
 }
 
 .answers {
@@ -48,11 +67,21 @@ body {
 }
 
 .button {
-    font-size: 3em;
+    font-size: 1.5em;
     line-height: 100%;
     background-color: black;
     cursor: pointer;
     color: white;
     padding: 8px;
     text-align: center;
+}
+
+.repeat {
+    display: none;
+    cursor: pointer;
+    background-color: rgb(121, 182, 235);
+    color: white;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 12px;
 }
